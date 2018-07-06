@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Right-Click-Trick</title>
+</head>
+<body>
+<h1>Right-Click-Trick</h1>
+<p><a class="github-button" href="https://github.com/qinshou/right-click-trick" data-icon="octicon-star"
+      data-show-count="true" aria-label="Star qinshou/right-click-trick on GitHub">Star</a></p>
+<p>Try Right-Click</p>
+
+
+<script src="../src/index.js"></script>
+<script>
+  var contextMenu = [
+    {
+      title: 'Return',
+      disabled: true,
+      onClick: function () {
+        history.go(-1)
+      }
+    },
+    {
+      title: 'Go',
+      disabled: true,
+      onClick: function () {
+        history.forward()
+      }
+    },
+    {
+      title: 'Reload',
+      disabled: false,
+      onClick: function () {
+        window.location.reload()
+      }
+    },
+    {
+      isDivider: true
+    },
+    {
+      title: 'Save as...',
+      disabled: false,
+      onClick: function () {
+        alert('Save as')
+      }
+    },
+    {
+      title: 'Print...',
+      disabled: false,
+      onClick: function () {
+        window.print()
+      }
+    },
+    {
+      title: 'Translate Chinese（Simplified）',
+      disabled: false,
+      onClick: function () {
+        alert('Translation')
+      }
+    },
+    {
+      isDivider: true
+    },
+    {
+      title: 'Display web page source code',
+      disabled: false,
+      onClick: function () {
+        window.location.href = 'view-source:' + location.href
+      }
+    },
+    {
+      title: 'Test',
+      disabled: false,
+      onClick: function () {
+        alert('No，Yes')
+      }
+    }
+  ]
+
+  rightClickTrick(contextMenu)
+</script>
+<script async defer src="//buttons.github.io/buttons.js"></script>
+</body>
+</html>

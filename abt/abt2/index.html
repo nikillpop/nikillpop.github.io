@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Detect Ad Block</title>
+
+<style>
+.demo-wrapper {
+	width: 500px;
+	margin: 150px auto;
+}
+#message {
+	width: 600px;
+	margin: 150px auto;
+	padding: 10px 20px;
+	text-align: center;	
+	background-color: #0f9d58;
+	color: #fff;
+	border-radius: 3px;
+}
+</style>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="demo-wrapper">
+	<div class="ads">
+		<img src="images/ads.jpg" height="250" width="300" alt="">
+	</div>
+</div>
+
+<script>
+$(document).ready(function() {
+	function appendMessage(argument) {
+		var div = $('<div>').attr('id', 'message').text('Ad block is installed and active. Please support us by disabling it.');
+		var add = $('body').append(div);
+	}
+	setTimeout(function(){
+		if($("img").css('display') == "none") {
+			appendMessage();
+		}
+	}, 500);
+});
+</script>
+
+</body>
+</html>
